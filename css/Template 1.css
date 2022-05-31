@@ -1,0 +1,551 @@
+/* Global rules */
+:root{
+    --main-transition: 0.3s;
+    --main-padding: 50px;
+    --main-color: #777;
+}
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    padding: 0.01em 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 980px;
+}
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width: 992px){
+    .container{
+        width: 980px;
+    }
+}
+/* main-heading */
+.main-heading {
+    text-align: center;
+}
+.main-heading p{
+    font-size: 24px;
+    font-weight: 30px;
+    color: var(--main-color);
+
+}
+.main-heading span{
+    margin: auto;
+    font-size: 15px;
+    line-height: 27px;
+    font-style: italic;
+    color: var(--main-color);
+    max-width: 350px;
+    display: block;
+}
+/* main-heading */
+/* End Global Rules */
+/* start Header */
+.template{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 2;
+    position: fixed;
+    opacity: 0.75;
+}
+.header .bu .links{
+    display: none;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+@media (min-width: 767px){
+    .header .bu .links{
+        display: flex;
+    }
+    .header .bu::before{
+        display: none;
+    }
+}
+.link{
+    display: flex;
+    transition: var(--main-transition);
+    order: -1;
+}
+@media (max-width: 767px){
+    .header .link{
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header .links{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        padding: 15px;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        transition: var(--main-transition);
+        -webkit-transition: var(--main-transition);
+        -moz-transition: var(--main-transition);
+        -ms-transition: var(--main-transition);
+        -o-transition: var(--main-transition);
+        }
+    }
+.header .links>li ,.lin>li{
+    padding: 10px 15px;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.header .links li a ,.lin li a {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 27px;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.header .links>li:hover , .lin>li:hover {
+    background-color: var(--main-color);
+    opacity: 1;
+}
+.header .icon{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+@media (min-width: 767px){
+    .header .link .bu{
+        display: none;
+    }
+}
+@media (max-width: 767px){
+    .header .icon{
+        display: none;
+    }
+    .header .link .bu:hover{
+        background-color: red;
+        color: white;
+    }
+    .header .link .bu:hover .links{
+        display: flex;
+    }
+    .header .link .bu:hover .links li i{
+        display: none;
+    }
+    .header .link .bu::before{
+        padding: 15px;
+    }
+}
+.header .icon:hover {
+    background-color: red;
+    color: white;
+}
+.header .link .bu{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+/* end Header */
+/* start home */
+.home{
+    position: relative;
+    background-image: url(../images/parallax1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    opacity: 0.75;
+}
+.home .text{ 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+@media (max-width: 767px){
+    .home .text {
+        text-align: center;
+        width: 70%;
+    }
+    .home .text span{
+        display: none;
+    }
+}
+.home .text p{
+    color: white;
+    background-color: black;
+    padding: 5px 25px;
+    font-size: 24px;
+    line-height: 43px;
+    letter-spacing: 10px;
+}
+/* end home */
+/* start about */
+.about{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+@media (max-width: 767px){
+    .about {
+        text-align: center;
+    }
+}
+.about .text {
+    margin: 20px auto ;
+    line-height: 27px;
+    font-size: 15px;
+    color: var(--main-color);
+}
+.about .boxs{
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 767px){
+    .about .boxs{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.about .boxs .image{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.about .boxs .image p{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 27px;
+    color: var(--main-color);
+}
+.about .boxs .image i{
+    margin-right: 15px;
+}
+.about .boxs .image img{
+    flex-basis: 50%;
+    max-width: 100%;
+    opacity: 0.60;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.about .boxs .image img:hover{
+    opacity: 1;
+}
+.about .boxs .txt{
+    flex: 1;
+    padding: 35px 20px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--main-color);
+}
+.about .boxx {
+    margin: 30px auto;
+}
+.about .boxx span{
+    text-align: center;
+    display: block;
+    color: var(--main-color);
+    font-size: 18px;
+    line-height: 32px;
+}
+.about .boxx .box{
+    padding: 5px 0;
+    color: var(--main-color);
+}
+.about .boxx .box p{
+    letter-spacing: 10px;
+}
+.about .boxx .box .prog{
+    width: 100%;
+    height: 35px;
+    background-color: #ddd;
+}
+.about .boxx .box .prog span{
+    height: 100%;
+    background-color: var(--main-color);
+    position: relative;
+}
+.about .boxx .box .prog span::before{
+    content: attr(data-prog);
+    position: absolute;
+    left: 50%;
+    color: white;
+    font-size: 15px;
+}
+/* end about */
+/* start portfolio */
+.portfolio .boxs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--main-color);
+}
+@media (max-width: 767px){
+    .portfolio .boxs{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.portfolio .boxs .box{
+    text-align: center;
+    padding: 20px 40px 30px;
+    color: white;
+}
+.portfolio .boxs .box p{
+    font-size: 23px;
+    font-weight: bold;
+}
+.portfolio .image {
+    background-image: url(../images/parallax2.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+    opacity: 0.75;
+}
+.portfolio .image h1{
+    color: white;
+    letter-spacing: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.portfolio .container
+{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.portfolio .container .photos{
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+@media (max-width: 767px) {
+    .portfolio .container .photos{
+        flex-direction: column;
+    }
+}
+.portfolio .container .photos .images{
+    flex-basis: 23%;
+}
+.portfolio .photos .images img{
+    max-width: 100%;
+    transition: var(--main-transition);
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
+}
+.portfolio .container .photos .images:hover img{
+    opacity: 0.5;
+}
+.portfolio .container a{
+    display: block;
+    width: fit-content;
+    background-color: #ddd;
+    padding: 10px 15px;
+    margin: 0 auto;
+    color: black;
+}
+/* end portfolio */
+/* start contact */
+.contact-image{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(../images/parallax3.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    opacity: 0.75;
+   position: relative;
+}
+.contact-image .text{
+    position: absolute;
+    font-size: 36px;
+    line-height: 65px;
+    letter-spacing: 10px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.contact{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.contact .form{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: var(--main-padding);
+}
+.contact .form .image{
+    flex-basis: 30%;
+}
+.contact .form .image img{
+    max-width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.contact .form .location{
+    color: var(--main-color);
+    margin-top: 20px;
+    flex: 1;
+    padding-left: 40px;
+    width: 69%;
+}
+.contact .form .location .text .loc{
+    display: flex;
+    align-items: center;
+}
+.contact .form .location .text .loc p{
+    margin: 0px;
+    font-size: 18px;
+    line-height: 32px;
+}
+.contact .form .location .text .loc i{
+    margin-right: 20px;
+    font-size: 20px;
+}
+.contact .form .location span{
+    display: block;
+    margin: 20px 0;
+}
+.contact .form .location form .one{
+    width: 49.5%;;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+.contact .form .location form .area{
+    width: 99.5%;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+.contact .form .location form .two{
+    margin-top: 20px;
+    display: flex;
+    margin-left: auto;
+    padding: 15px 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    width: 160px;
+}
+.contact .form .location form .two:hover{
+    background-color: var(--main-color);
+    color: black;
+}
+@media (Max-width: 768px){
+    .contact .form{
+        flex-direction: column;
+    }
+    .contact .form .location{
+        width: 100%;
+        padding-left: 0;
+    }
+    .contact .form .location form{
+        width: 100%;
+    }
+    .contact .form .location form .one{
+        margin-top: 10px;
+        width: 99%;;
+    }
+}
+/* end contact */
+/* start footer */
+.footer{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: black;
+    opacity: 0.75;
+}
+.footer:hover{
+    opacity: 1;
+}
+.footer .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer .container .top{
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+}
+.footer .container .top i{
+    margin-right: 10px;
+}
+.footer .container .social{
+    color: white;
+    margin: 25px 0 10px;
+    font-size: 23px;
+}
+.footer .made{
+    color: white;
+    font-size: 14px;
+}
+.footer .made a{
+    color: white;
+    text-decoration: underline;
+}
+/* end footer */
